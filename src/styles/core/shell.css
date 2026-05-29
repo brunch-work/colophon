@@ -1,27 +1,24 @@
 :root {
   interpolate-size: allow-keywords;
   --100dvh: calc(100dvh - env(safe-area-inset-bottom));
-  --font-sans: m, Helvetica, system-ui, sans-serif;
-  --color-black: #131718;
-  --color-white: #fff;
-  --color-grey: #a1a1aa;
-  --color-green: #007600;
-}
-
-body.theme-white {
-  background-color: #fff;
+  --m: m, Helvetica, system-ui, sans-serif;
+  --color-black: #1f1f1f;
+  --color-white: #ededed;
 }
 
 html,
 body {
-  font-family: var(--font-sans);
+  font-family: var(--m);
   text-rendering: optimizeLegibility;
+  text-transform: uppercase;
   scrollbar-width: none;
-  font-weight: 400;
+  font-weight: 570;
+  letter-spacing: -0.01em;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  font-feature-settings: "case" on;
   font-size: 62.5%;
-  background-color: #fafafa;
+  background-color: #1f1f1f;
 
   &::-webkit-scrollbar {
     display: none;

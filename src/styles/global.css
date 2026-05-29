@@ -3,3 +3,6 @@
 @import "./core/typography.css";
 @import "./core/animations.css";
 @import "./core/grid.css";
+
+@import "./components/card.css";
+@import "./components/home.css";

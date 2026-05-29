@@ -1,0 +1,5 @@
+.home {
+  min-height: var(--100dvh);
+  align-content: center;
+  container-type: inline-size;
+}

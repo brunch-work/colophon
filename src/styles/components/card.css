@@ -1,0 +1,85 @@
+.card {
+  background: var(--color-white);
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-auto-rows: min-content;
+  box-sizing: border-box;
+  aspect-ratio: 3.5 / 2;
+  align-content: center;
+  row-gap: 1em;
+
+  /* Master scale: 2.043cqw = 1.6rem at the 783px desktop card width. The type
+     and the 1em row-gap inherit this, so the whole card scales as one unit,
+     with a 14px floor for the links/time. */
+  font-size: clamp(14px, 2.043cqw, 1.6rem);
+
+  .lockup {
+    grid-column: 2 / -2;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+  }
+
+  .card__links {
+    grid-column: 2 / -2;
+    grid-row: 2;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      white-space: nowrap;
+    }
+  }
+
+  /* On desktop the wrapper is transparent, so email / phone / time spread
+     across the row as three flex items (see the container query for mobile). */
+  .card__row {
+    display: contents;
+  }
+
+  .card__time {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    /* Match the link styling so the clock isn't lighter/smaller than the rest. */
+    font-weight: 570;
+  }
+}
+
+/* Narrow cards: stop the single row from cramping at the 14px floor. Lockup
+   sits at the top, links at the bottom; email + phone stack on the left and the
+   clock right-aligns. Queries .home's width (≈ the card width). */
+@container (max-width: 700px) {
+  .card {
+    align-content: space-between;
+    padding: 1em;
+    /* Drop the column inset so content fills the card minus its padding. */
+    grid-template-columns: 1fr;
+  }
+
+  .card .lockup,
+  .card .card__links {
+    grid-column: 1 / -1;
+  }
+
+  /* Text hugs the padding edge with no extra spacing. */
+  .card a,
+  .card__time {
+    margin: 0;
+  }
+
+  /* Scoped under .card to match the (0,2,0) specificity of the nested base
+     rules above; the later source order then lets these win on mobile. */
+  .card .card__links {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: normal;
+  }
+
+  /* Email on its own row above; phone (left) and time (right) share a row. */
+  .card .card__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}

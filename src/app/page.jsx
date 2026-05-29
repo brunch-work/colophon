@@ -1,5 +1,11 @@
 "use client";
 
+import Card from "@/components/Card";
+
 export default function Home() {
-  return <main className="subgrid home" />;
+  return (
+    <main className="subgrid home">
+      <Card />
+    </main>
+  );
 }
