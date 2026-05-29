@@ -1,42 +1,34 @@
 "use client";
 
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
+import { useAnimate, useReducedMotion } from "motion/react";
 
 import Lockup from "./Lockup";
 import Time from "./Time";
 
-gsap.registerPlugin(useGSAP);
+const rand = (min, max) => Math.random() * (max - min) + min;
+// GSAP's expo.out, exactly: 1 - 2^(-10x)
+const expoOut = (x) => (x === 1 ? 1 : 1 - Math.pow(2, -10 * x));
 
 export default function Card() {
-  const cardRef = useRef(null);
+  const [scope, animate] = useAnimate();
+  const reduceMotion = useReducedMotion();
 
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
+  useEffect(() => {
+    if (reduceMotion) return;
+    const end = rand(-5, 5);
+    const start = rand(12, 20) * (end < 0 ? -1 : 1);
+    const y = window.innerHeight + scope.current.offsetHeight;
 
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        const endRotation = gsap.utils.random(-5, 5);
-        const startRotation = gsap.utils.random(12, 20) * (endRotation < 0 ? -1 : 1);
-
-        gsap.fromTo(
-          cardRef.current,
-          { y: () => window.innerHeight, rotation: startRotation },
-          {
-            y: 0,
-            rotation: endRotation,
-            ease: "expo.out",
-            duration: 1.4,
-          }
-        );
-      });
-    },
-    { scope: cardRef }
-  );
+    animate(
+      scope.current,
+      { y: [y, 0], rotate: [start, end] },
+      { duration: 1.4, ease: expoOut }
+    );
+  }, [reduceMotion]);
 
   return (
-    <div className="card" ref={cardRef}>
+    <div className="card" ref={scope}>
       <Lockup />
       <div className="card__links">
         <a href="mailto:contact@colophon.online">contact@colophon.online</a>

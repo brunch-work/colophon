@@ -9,8 +9,7 @@
   align-content: center;
   row-gap: 1em;
   position: relative;
-
-  transform: translateY(100vh);
+  transform: translateY(calc(100vh + 100%));
 
   @media (prefers-reduced-motion: reduce) {
     transform: none;
