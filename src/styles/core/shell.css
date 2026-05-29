@@ -1,0 +1,42 @@
+:root {
+  interpolate-size: allow-keywords;
+  --100dvh: calc(100dvh - env(safe-area-inset-bottom));
+  --font-sans: m, Helvetica, system-ui, sans-serif;
+  --color-black: #131718;
+  --color-white: #fff;
+  --color-grey: #a1a1aa;
+  --color-green: #007600;
+}
+
+body.theme-white {
+  background-color: #fff;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  scrollbar-width: none;
+  font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 62.5%;
+  background-color: #fafafa;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.44;
+  font-weight: 375;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+
+  &::selection {
+    background-color: var(--color-green);
+    color: var(--color-white);
+  }
+}

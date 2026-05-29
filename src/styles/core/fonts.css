@@ -1,0 +1,10 @@
+@font-face {
+  font-family: m;
+  src:
+    url("/fonts/ABCMonumentGroteskVariableVF.woff2") format("woff2"),
+    url("/fonts/ABCMonumentGroteskVariableVF.woff") format("woff"),
+    url("/fonts/ABCMonumentGroteskVariableVF.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
