@@ -73,7 +73,14 @@ export const metadata = {
     description: APP_DESCRIPTION,
     url: APP_BASE_URL,
     images: APP_OG_IMAGE
-      ? [{ url: APP_OG_IMAGE, width: 1200, height: 630, alt: APP_DEFAULT_TITLE }]
+      ? [
+          {
+            url: APP_OG_IMAGE,
+            width: 1200,
+            height: 630,
+            alt: APP_DEFAULT_TITLE,
+          },
+        ]
       : [],
     locale: "en_US",
   },
@@ -92,8 +99,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="grid">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var bg=["--color-red","--color-brown","--color-blue","--color-tan","--color-green","--color-light-blue"];var link=["--color-red","--color-brown","--color-blue","--color-tan","--color-green"];var pick=function(a){return "var("+a[Math.floor(Math.random()*a.length)]+")";};var s=document.documentElement.style;s.setProperty("--page-bg",pick(bg));var last=null;document.addEventListener("pointerover",function(e){var a=e.target.closest&&e.target.closest("a");if(a){if(a!==last){last=a;s.setProperty("--link-color",pick(link));}}else{last=null;}});})();`,
+          }}
+        />
         {children}
         <Analytics />
       </body>

@@ -15,15 +15,14 @@ a {
   color: var(--color-black);
   letter-spacing: -0.01em;
   font-weight: 570;
-  transition: all 0.2s ease;
   cursor: pointer;
   font-variation-settings: "slnt" 0;
   text-decoration: none;
 
   &:hover,
   &.active {
-    transition: all 0.2s ease;
-    text-decoration: underline;
+    color: var(--color-white);
+    background-color: var(--link-color);
   }
 }
 

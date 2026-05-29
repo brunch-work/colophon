@@ -4,6 +4,17 @@
   --m: m, Helvetica, system-ui, sans-serif;
   --color-black: #1f1f1f;
   --color-white: #ededed;
+
+  /* backgrounds */
+  --color-red: #8f221b;
+  --color-brown: #382423;
+  --color-blue: #2b337e;
+  --color-tan: #b29969;
+  --color-green: #004921;
+  --color-light-blue: #bce0ff;
+
+  --page-bg: var(--color-red);
+  --link-color: var(--color-blue);
 }
 
 html,
@@ -18,7 +29,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "case" on;
   font-size: 62.5%;
-  background-color: #1f1f1f;
+  background-color: var(--page-bg);
 
   &::-webkit-scrollbar {
     display: none;
