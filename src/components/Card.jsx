@@ -20,6 +20,14 @@ export default function Card() {
     const start = rand(12, 20) * (end < 0 ? -1 : 1);
     const y = window.innerHeight + scope.current.offsetHeight;
 
+    // TEMP DEBUG — remove once diagnosed
+    console.log("[card-debug]", {
+      innerHeight: window.innerHeight,
+      offsetHeight: scope.current.offsetHeight,
+      startY: y,
+      rectTopBeforeAnim: scope.current.getBoundingClientRect().top,
+    });
+
     animate(
       scope.current,
       { y: [y, 0], rotate: [start, end] },
