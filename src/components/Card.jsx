@@ -20,22 +20,6 @@ export default function Card() {
     const start = rand(12, 20) * (end < 0 ? -1 : 1);
     const y = window.innerHeight + scope.current.offsetHeight;
 
-    // TEMP DEBUG — remove once diagnosed
-    const el = scope.current;
-    const prevTransform = el.style.transform;
-    el.style.transform = "none";
-    const restingTop = el.getBoundingClientRect().top;
-    const computed = getComputedStyle(el).transform;
-    el.style.transform = prevTransform;
-    console.log("[card-debug]", {
-      innerHeight: window.innerHeight,
-      offsetHeight: el.offsetHeight,
-      startY: y,
-      restingTopNoTransform: restingTop,
-      computedTransform: computed,
-      mainHeight: el.parentElement?.getBoundingClientRect().height,
-    });
-
     animate(
       scope.current,
       { y: [y, 0], rotate: [start, end] },
