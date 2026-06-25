@@ -67,7 +67,7 @@ export default function Emma() {
                           <img
                             src="https://colophon.online/images/png/colophon_logotype.png"
                             alt="colophon logo"
-                            style="width: 16px; height: 18px; object-fit: contain;"
+                            style="width: 150px; height: auto; object-fit: contain;"
                           />
                         </a>
                       </td>
