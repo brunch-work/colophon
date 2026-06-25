@@ -19,14 +19,14 @@ export default function Emma() {
                     font-family: Helvetica Neue, system-ui, sans-serif;
                     font-size: 16px;
                     line-height: 1.08;
-                    font-weight: 500;
+                    font-weight: 600;
                     text-transform: uppercase;
                     letter-spacing: 0em;
                   "
                   >
                     <tr>
                       <td>
-                        <p style="font-size: 16px; margin: 0; padding-top: 16px; color: #000">
+                        <p style="font-size: 16px; margin: 0; padding-top: 16px; color: #1F1F1F">
                           Emma Wismer
                         </p>
                       </td>
@@ -38,7 +38,7 @@ export default function Emma() {
                           padding-bottom: 12px;
                           margin: 0;
                           font-size: 16px;
-                          color: #000;
+                          color: #1F1F1F;
                         "
                         >
                         Founder & Principal
@@ -47,13 +47,13 @@ export default function Emma() {
                     </tr>
                     <tr>
                       <td>
-                        <p style="font-size: 16px; margin: 0; padding-bottom: 12px; color: #000; text-decoration: none !important;">
+                        <p style="font-size: 16px; margin: 0; padding-bottom: 16px; color: #1F1F1F; text-decoration: none !important;">
                           <a
                             href="tel:+15144029382"
                             style="
                             margin: 0;
                             font-size: 16px;
-                            color: #000;
+                            color: #1F1F1F;
                           "
                           >
                           +1 514-402-9382
@@ -67,7 +67,7 @@ export default function Emma() {
                           <img
                             src="https://colophon.online/images/png/colophon_logotype.png"
                             alt="colophon logo"
-                            style="width: 150px; height: auto; object-fit: contain;"
+                            style="width: 180px; height: auto; object-fit: contain;"
                           />
                         </a>
                       </td>
