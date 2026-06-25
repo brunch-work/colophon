@@ -48,3 +48,7 @@ body {
     color: var(--color-white);
   }
 }
+
+.signature {
+  grid-column: 1 /-1;
+}
